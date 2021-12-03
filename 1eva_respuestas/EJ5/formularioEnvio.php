@@ -11,7 +11,7 @@
     <input type="text" name="Name"><br>
     <label for="Surname">Introduce tus apellidos:</label>
     <input type="text" name="Surname"><br>
-    <label for="Date">Fecha:</label>
+    <label for="Date">Fecha de Nacimiento:</label>
     <input type="date" name="Date"><br>
     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
     <label for="fichero_usuario">Enviar este fichero:</label> 

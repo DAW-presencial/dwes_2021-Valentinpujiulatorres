@@ -11,7 +11,7 @@ Para ello deberíamos alojar el repositorio en "htdocs" y abir el navegador tal 
 A) Si , puedo ya que aunque no estén declaradas o sobreescritas , mediante herencia de objetos heredará aquellos métodos, en este caso como sabemos que la clase hijo no ha sobrescrito dichas funciones , sí , accederá a las funciones de la clase padre .
 B)El efecto es tal que :
 
--Elemento protegido : Sí puede verlo ya que es una clase descendiente de ella y por tanto por las reglas de orientación a objetos y herencia sí puede acceder/leer/escribir , eso si , dependerá tambien del código implememntado.
+-Elemento protegido : Sí puede verlo (**redeclarandolo**) ya que es una clase descendiente de ella y por tanto por las reglas de orientación a objetos y herencia sí puede acceder/leer/escribir , eso si , dependerá tambien del código implememntado.
 
 -Elemento Público : Obiamente podrá acceder aun que no fuese descendiente.
 

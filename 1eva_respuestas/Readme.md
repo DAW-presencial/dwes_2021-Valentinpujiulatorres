@@ -5,6 +5,7 @@ Para ello deberíamos alojar el repositorio en "htdocs" y abir el navegador tal 
 
 --  localhost/dwes_2021-Valentinpujiulatorres/1eva_respuestas/EJ5/
 
+o accediendo a vpujiula.ddns.net/dwes_2021-Valentinpujiulatorres/1eva_respuestas (centro) 
 
 ## Respuesta Ejercicio 4
 

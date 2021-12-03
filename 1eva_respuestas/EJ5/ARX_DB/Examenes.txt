@@ -1,6 +1,0 @@
-
-PHP >>> 3 
-
-Jaume Rosiñol >>1
-
-Toni (JS/Html)>> 29

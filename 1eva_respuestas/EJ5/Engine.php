@@ -16,7 +16,7 @@ echo '<pre>';
 if (move_uploaded_file($_FILES['fichero_usuario']['tmp_name'], $fichero_subido)) {
     echo "El fichero 1 es válido y se subió con éxito.\n";
 } else {
-    echo "¡Posible ataque de subida de ficheros!\n";
+    echo "¡Posible ataque de subida de ficheros / Error FileUpload!\n";
 }
 echo '<pre>';
 if (move_uploaded_file($_FILES['fichero_usuario2']['tmp_name'], $fichero_subido2)) {

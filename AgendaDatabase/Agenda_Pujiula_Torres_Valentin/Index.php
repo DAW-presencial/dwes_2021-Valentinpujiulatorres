@@ -57,10 +57,28 @@
         
 
     </div>
+        <?php
+       /*  $sql = 'SELECT publisher_id, name 
+		FROM publishers';
 
+         $statement = $pdo->query($sql);
+
+        // get all publishers
+        $publishers = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($publishers) {
+            // show the publishers
+            foreach ($publishers as $publisher) {
+                echo $publisher['name'] . '<br>';
+            }
+        }
+         */
+        
+        ?>
         <?php 
         require 'pdoconfig.php';
-        $Connection = new mysqli("$host","$username","$password","$dbname");
+        //$Connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+         $Connection = new mysqli("$host","$username","$password","$dbname");
 
         
 

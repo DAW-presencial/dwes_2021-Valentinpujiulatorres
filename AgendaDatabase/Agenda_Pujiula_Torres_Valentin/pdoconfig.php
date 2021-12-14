@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
-    $dbname = 'agendacontactos';
-    $username = 'root';
-    $password = '';
+    $dbname = 'VpujiulaDB';
+    $username = 'vpujiula_usr';
+    $password = 'abc123.';
     
 ?>

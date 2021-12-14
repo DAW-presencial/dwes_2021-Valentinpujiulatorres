@@ -58,7 +58,8 @@
         <?php
         require'pdoconfig.php';
         try {
-            $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+            $conn = new PDO("psql -h $host -U $username -d $dbname");
+            //$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
             echo "<p>Connected to $dbname at $host successfully.<p>";
         
         } catch (PDOException $pe) {

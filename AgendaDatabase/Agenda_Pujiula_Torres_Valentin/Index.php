@@ -88,7 +88,7 @@
 
         echo "Filas Modificadas: $affectedRows <br>";
          //SELECT::
-        $result = $conn->prepare('SELECT * FROM `contactlist`');
+        $result = $conn->prepare('SELECT * FROM contactlist');
         $result->execute();
          
          while ($Elm = $result-> fetch()) {

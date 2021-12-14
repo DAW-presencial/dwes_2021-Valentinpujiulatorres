@@ -90,11 +90,11 @@
          //SELECT::
         $result = $conn->prepare('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
         $result->execute();
-        echo $result->fetchObject();
-       /*  while ($Elm = $result->fetch()) {
+         
+         while ($Elm = $result->fetchObject()) {
            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
         }
-        $conn=null; */
+        $conn=null; 
             }catch(PDOException $pdoe){
                 echo($pdoe->getMessage());
             }

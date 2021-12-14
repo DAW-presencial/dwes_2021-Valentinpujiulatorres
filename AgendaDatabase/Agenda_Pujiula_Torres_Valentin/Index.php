@@ -80,7 +80,7 @@
         $Surname = $_POST['Surname'];
         $Telephone = $_POST['Tel'];
         $consulta =
-            "INSERT INTO `contactlist`(`Name`, `Surname`, `Phone`) VALUES ('$name','$Surname','$Telephone')";
+            "INSERT INTO contactlist (Name, Surname, Phone) VALUES ($name,$Surname,$Telephone)";
 
             try{
 

@@ -83,16 +83,18 @@
             "INSERT INTO `contactlist`(`Name`, `Surname`, `Phone`) VALUES ('$name','$Surname','$Telephone')";
 
             try{
+
         $affectedRows = $conn->exec($consulta);
 
         echo "Filas Modificadas: $affectedRows <br>";
          //SELECT::
-        $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
-
-        while ($Elm = $result->fetch()) {
+        $result = $conn->prepare('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
+        $result->execute();
+        return $result->fetchObject();
+       /*  while ($Elm = $result->fetch()) {
            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
         }
-        $conn=null;
+        $conn=null; */
             }catch(PDOException $pdoe){
                 echo($pdoe->getMessage());
             }

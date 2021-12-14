@@ -38,8 +38,7 @@ CREATE TABLE `contactlist` (
 --
 
 INSERT INTO `contactlist` (`Name`, `Surname`, `Phone`) VALUES
-('Valentin', 'Pujiula Torres', 633203466),
-('Fernandito', 'Kit Kat', 666777666);
+('Valentin', 'Pujiula Torres', 633203466);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

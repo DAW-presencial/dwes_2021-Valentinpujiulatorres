@@ -46,6 +46,10 @@
         <input type="submit" value="Erase Reñgister" name="Erase" />
         </form>
         <br>
+        <br>
+        <p>Crear Contacto ( Nombre , Apellido , Número)</p>
+        <p>Update by Nombre y Surname sobre campo Telefono</p>
+        <p>Delete Contact según Nombre y Apellido</p>
         <hr>
         
         
@@ -97,8 +101,7 @@
         $Surname = $_POST['Surname'];
         $Telephone = $_POST['Tel'];
         $consulta =
-            "UPDATE contactlist SET Surname='$Surname', Phone='$Telephone'
-            WHERE `Name`= '$name'";
+            "UPDATE `contactlist` SET `Phone`='$Telephone' WHERE `Name`='$name' AND `Surname`='$Surname'";
 
             try{
         $affectedRows = $conn->exec($consulta);
@@ -118,6 +121,27 @@
 
 
        }else if (isset($_POST['Erase'])){
+
+            $name = $_POST['Name'];
+            $Surname = $_POST['Surname'];
+            $Telephone = $_POST['Tel'];
+            $consulta =
+                "DELETE FROM contactlist WHERE `Name`='$name' AND `Surname`='$Surname' " ;
+
+                try{
+            $affectedRows = $conn->exec($consulta);
+
+            echo "Filas Modificadas: $affectedRows <br>";
+            //SELECT::
+            $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
+
+            while ($Elm = $result->fetch()) {
+            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
+            }
+            $conn=null;
+                }catch(PDOException $pdoe){
+                    echo($pdoe->getMessage());
+                }
 
        }
         ?>

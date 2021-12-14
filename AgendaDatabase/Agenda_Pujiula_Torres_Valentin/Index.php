@@ -115,15 +115,16 @@
 
         echo "Filas Modificadas: $affectedRows <br>";
          //SELECT::
-        $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
-
-        while ($Elm = $result->fetch()) {
-           echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
-        }
-        $conn=null;
-            }catch(PDOException $pdoe){
-                echo($pdoe->getMessage());
-            }
+         $result = $conn->prepare('SELECT * FROM contactlist');
+         $result->execute();
+          
+          while ($Elm = $result-> fetch()) {
+            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
+         }
+         $conn=null; 
+             }catch(PDOException $pdoe){
+                 echo($pdoe->getMessage());
+             }
 
 
 
@@ -133,23 +134,23 @@
             $Surname = $_POST['Surname'];
             $Telephone = $_POST['Tel'];
             $consulta =
-                "DELETE FROM contactlist WHERE `Name`='$name' AND `Surname`='$Surname' " ;
+                "DELETE FROM contactlist WHERE Name='$name' AND Surname='$Surname' " ;
 
                 try{
             $affectedRows = $conn->exec($consulta);
 
             echo "Filas Modificadas: $affectedRows <br>";
             //SELECT::
-            $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
-
-            while ($Elm = $result->fetch()) {
-            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
+            $result = $conn->prepare('SELECT * FROM contactlist');
+            $result->execute();
+             
+             while ($Elm = $result-> fetch()) {
+               echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
             }
-            $conn=null;
+            $conn=null; 
                 }catch(PDOException $pdoe){
                     echo($pdoe->getMessage());
                 }
-
        }
         ?>
         <?php 

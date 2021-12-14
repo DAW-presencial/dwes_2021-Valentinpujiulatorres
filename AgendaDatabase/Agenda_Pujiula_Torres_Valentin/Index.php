@@ -133,7 +133,7 @@
             $name = $_POST['Name'];
             $Surname = $_POST['Surname'];
             $Telephone = $_POST['Tel'];
-            $consulta = "DELETE FROM contactlist WHERE "Name" = '$name'";
+            $consulta = "DELETE FROM contactlist WHERE `Name` = '$name'";
 
                 try{
             $affectedRows = $conn->exec($consulta);

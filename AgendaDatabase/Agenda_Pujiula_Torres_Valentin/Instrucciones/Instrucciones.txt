@@ -1,6 +1,4 @@
-El proyecto está pensado para ser desplegado en un servidor junto a una base de datos .
-Para hacerlo funcionar , deberás :
+El proyecto se puede ver en http://vpujiula.ddns.net/dwes_2021-Valentinpujiulatorres/AgendaDatabase/Agenda_Pujiula_Torres_Valentin/Index.php
 
--Mover el repositorio a tu servidor (Puedes configurar tu dominio en el archivo pdoconfig.php).
--Importar  la base de datos adjunta .
+--Las queries dan error sintáctico aunque son correctas de manual .
 

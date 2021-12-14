@@ -3,6 +3,5 @@
     $dbname = 'agendacontactos';
     $username = 'root';
     $password = '';
-
-
+    
 ?>

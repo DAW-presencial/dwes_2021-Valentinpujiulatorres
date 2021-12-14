@@ -29,14 +29,8 @@
             require_once 'pdoconfig.php';
 
 
-                // echo de las 2 formas , pdo y msqli , es irrelevante , la utilidad es la misma
-            try {
-                $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-                echo "<p>Connected to $dbname at $host successfully.<p>";
-            
-            } catch (PDOException $pe) {
-            die("Could not connect to the database $dbname :" . $pe->getMessage());
-        }
+                
+        
         ?>
     </div> 
     <div id="Formulario" >
@@ -58,31 +52,83 @@
 
     </div>
         <?php
-       /*  $sql = 'SELECT publisher_id, name 
-		FROM publishers';
-
-         $statement = $pdo->query($sql);
-
-        // get all publishers
-        $publishers = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($publishers) {
-            // show the publishers
-            foreach ($publishers as $publisher) {
-                echo $publisher['name'] . '<br>';
-            }
-        }
-         */
+        require'pdoconfig.php';
+        try {
+            $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+            echo "<p>Connected to $dbname at $host successfully.<p>";
         
+        } catch (PDOException $pe) {
+        die("Could not connect to the database $dbname :" . $pe->getMessage());
+    }
+        
+       
+       
+
+       if (isset($_POST['Submit'])){
+
+        //INSERT::
+        $name = $_POST['Name'];
+        $Surname = $_POST['Surname'];
+        $Telephone = $_POST['Tel'];
+        $consulta =
+            "INSERT INTO `contactlist`(`Name`, `Surname`, `Phone`) VALUES ('$name','$Surname','$Telephone')";
+
+            try{
+        $affectedRows = $conn->exec($consulta);
+
+        echo "Filas Modificadas: $affectedRows <br>";
+         //SELECT::
+        $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
+
+        while ($Elm = $result->fetch()) {
+           echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
+        }
+        $conn=null;
+            }catch(PDOException $pdoe){
+                echo($pdoe->getMessage());
+            }
+            
+
+        
+       } else if (isset($_POST['Update'])){
+       
+       
+        $name = $_POST['Name'];
+        $Surname = $_POST['Surname'];
+        $Telephone = $_POST['Tel'];
+        $consulta =
+            "UPDATE contactlist SET Surname='$Surname', Phone='$Telephone'
+            WHERE `Name`= '$name'";
+
+            try{
+        $affectedRows = $conn->exec($consulta);
+
+        echo "Filas Modificadas: $affectedRows <br>";
+         //SELECT::
+        $result = $conn->query('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
+
+        while ($Elm = $result->fetch()) {
+           echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
+        }
+        $conn=null;
+            }catch(PDOException $pdoe){
+                echo($pdoe->getMessage());
+            }
+
+
+
+       }else if (isset($_POST['Erase'])){
+
+       }
         ?>
         <?php 
-        require 'pdoconfig.php';
+        /* require 'pdoconfig.php';
         //$Connection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
          $Connection = new mysqli("$host","$username","$password","$dbname");
-
+ */
         
 
-        if (isset($_POST['Submit'])){
+      /*   if (isset($_POST['Submit'])){
     
             $Name = $_POST['Name'];
             $Surname = $_POST['Surname'];
@@ -136,7 +182,7 @@
               };
 
         }
-        
+         */
              ?>
            
          

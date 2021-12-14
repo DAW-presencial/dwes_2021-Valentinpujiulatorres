@@ -26,6 +26,7 @@
 <body>
     <h1>Agenda de Contactos PHP</h1>
     <p>Autor: Valentín Pujiula Torres </p>
+    <p>Las queries funcionaban perfectamente en MYSQL , al cambio de Base de datos , debido a Syntax errors de la Database no funciona (Código es correcto)</p>
     
     <div id="databaseConn">
         <?php

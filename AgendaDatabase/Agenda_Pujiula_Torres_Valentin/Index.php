@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <style>
+        p{
+            color: green;
+        }
         body{
             margin-left: 15%;
             margin-right: 7%;
@@ -59,6 +62,7 @@
         require'pdoconfig.php';
         try {
             $conn = new PDO("psql -h $host -U $username -d $dbname");
+            
             //$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
             echo "<p>Connected to $dbname at $host successfully.<p>";
         

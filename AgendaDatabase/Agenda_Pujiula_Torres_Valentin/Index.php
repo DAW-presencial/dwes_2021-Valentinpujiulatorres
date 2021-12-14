@@ -134,7 +134,7 @@
             $Surname = $_POST['Surname'];
             $Telephone = $_POST['Tel'];
             $consulta =
-                "DELETE FROM contactlist WHERE 'Name'='$name'" ;
+                "DELETE FROM contactlist WHERE (Name = '$name' , Surname = '$Surname')";
 
                 try{
             $affectedRows = $conn->exec($consulta);

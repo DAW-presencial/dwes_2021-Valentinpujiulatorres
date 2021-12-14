@@ -90,7 +90,7 @@
          //SELECT::
         $result = $conn->prepare('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
         $result->execute();
-        return $result->fetchObject();
+        echo $result->fetchObject();
        /*  while ($Elm = $result->fetch()) {
            echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
         }

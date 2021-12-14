@@ -88,12 +88,11 @@
 
         echo "Filas Modificadas: $affectedRows <br>";
          //SELECT::
-        $result = $conn->prepare('SELECT `Name`, `Surname`, `Phone` FROM `contactlist`');
+        $result = $conn->prepare('SELECT * FROM `contactlist`');
         $result->execute();
          
          while ($Elm = $result-> fetch()) {
-           //echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
-           printf ('<table><thead><tr><th  colspan="4" align="left" >TCDD 3.BOLGE MUDURLUGU <img src="tcdd.png" align="right" width="92px" /></th></tr><tr><th  colspan="4">Hemzemin Gecitler ve Ozellikeri</th></tr></thead><tbody><tr><th>Kilometre</th><td colspan="3">%s</td></tr><tr><th>Turu</th><td colspan="3">%s</td></tr><tr><th>Hat Kesimi</th><td colspan="3">%s</td></tr><tr><th>Sehir</th><td colspan="3">%s</td></tr><tr><th>Ilce</th><td colspan="3">%s</td></tr><tr><th>Mahalle</th><td colspan="3">%s</td></tr><tr><th colspan="4" > copyright © </th></tr></tbody></table>', $result["Name"],$result["Surname"], $result["Phone"]);
+           echo 'Contacto: ' . $Elm['Name'] . $Elm['Surname'] . $Elm['Phone'] . '<br />';
         }
         $conn=null; 
             }catch(PDOException $pdoe){
